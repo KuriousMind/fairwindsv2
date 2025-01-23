@@ -2,6 +2,7 @@
 
 import AuthUI from '@/components/AuthUI'
 import { useAuth } from '@/components/AuthProvider'
+import { signOut } from 'aws-amplify/auth'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -49,6 +50,19 @@ export default function Home() {
             >
               View Maintenance Tasks
             </Link>
+            <button
+              onClick={async () => {
+                try {
+                  await signOut();
+                  window.location.reload();
+                } catch (error) {
+                  console.error('Error signing out:', error);
+                }
+              }}
+              className="block w-full py-2 px-4 rounded-lg bg-accent text-white font-bold hover:opacity-90 transition-opacity text-center"
+            >
+              Sign Out
+            </button>
           </div>
         </div>
       )}

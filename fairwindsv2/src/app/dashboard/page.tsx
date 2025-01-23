@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { generateClient } from 'aws-amplify/data'
 import { type Schema } from '@/amplify/data/resource'
 import { useAuthenticator } from '@aws-amplify/ui-react'
+import { signOut } from 'aws-amplify/auth'
 import Link from 'next/link'
 
 export default function DashboardPage() {
@@ -52,12 +53,29 @@ export default function DashboardPage() {
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Welcome to Your Dashboard</h1>
             <p className="text-gray-600 mb-8">Looks like you haven't set up your RV profile yet.</p>
-            <Link
-              href="/rv/new"
-              className="inline-block py-2 px-4 rounded-lg bg-primary text-white font-bold hover:opacity-90 transition-opacity"
-            >
-              Create RV Profile
-            </Link>
+            <div className="space-y-4">
+              <Link
+                href="/rv/new"
+                className="inline-block py-2 px-4 rounded-lg bg-primary text-white font-bold hover:opacity-90 transition-opacity"
+              >
+                Create RV Profile
+              </Link>
+              <div className="pt-4">
+                <button
+                  onClick={async () => {
+                    try {
+                      await signOut();
+                      window.location.reload();
+                    } catch (error) {
+                      console.error('Error signing out:', error);
+                    }
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
+                >
+                  Sign Out
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -101,6 +119,21 @@ export default function DashboardPage() {
             <h2 className="text-lg font-medium text-gray-900 mb-4">Maintenance</h2>
             <p className="text-gray-600">No maintenance records yet.</p>
             {/* We'll add maintenance records here in the next phase */}
+          </div>
+          <div className="border-t border-gray-200 px-6 py-4 flex justify-center">
+            <button
+              onClick={async () => {
+                try {
+                  await signOut();
+                  window.location.reload();
+                } catch (error) {
+                  console.error('Error signing out:', error);
+                }
+              }}
+              className="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
+            >
+              Sign Out
+            </button>
           </div>
         </div>
       </div>

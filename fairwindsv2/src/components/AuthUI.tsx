@@ -72,19 +72,19 @@ export default function AuthUI() {
 
   if (mode === 'confirm') {
     return (
-      <div className="p-4 bg-white rounded-lg shadow-md">
-        <h2 className="mb-4 text-xl font-bold">Confirm Sign Up</h2>
+      <div className="p-6 bg-white rounded-lg shadow-lg border-2 border-accent">
+        <h2 className="mb-4 text-2xl font-bold text-heading">Confirm Sign Up</h2>
         <form onSubmit={handleConfirm} className="space-y-4">
           <div>
-            <label className="block mb-1">Confirmation Code</label>
-            <p className="text-sm text-gray-500 mb-2">
+            <label className="block mb-1 text-text font-medium">Confirmation Code</label>
+            <p className="text-sm text-text/70 mb-2">
               Check your email for the confirmation code
             </p>
             <input
               type="text"
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none"
               required
             />
           </div>
@@ -92,7 +92,7 @@ export default function AuthUI() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 disabled:opacity-50"
+          className="w-full px-4 py-2 text-white bg-primary rounded-lg hover:bg-primary/90 disabled:bg-primary/50 transition-colors"
           >
             {loading ? 'Confirming...' : 'Confirm'}
           </button>
@@ -102,35 +102,35 @@ export default function AuthUI() {
   }
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md">
-      <h2 className="mb-4 text-xl font-bold">
+    <div className="p-6 bg-white rounded-lg shadow-lg border-2 border-accent">
+      <h2 className="mb-4 text-2xl font-bold text-heading">
         {mode === 'signIn' ? 'Sign In' : 'Sign Up'}
       </h2>
       <form onSubmit={mode === 'signIn' ? handleSignIn : handleSignUp} className="space-y-4">
         <div>
-          <label className="block mb-1">Email</label>
+          <label className="block mb-1 text-text font-medium">Email</label>
           <input
             type="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none"
             required
           />
         </div>
         <div>
-          <label className="block mb-1">Password</label>
+          <label className="block mb-1 text-text font-medium">Password</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border-2 border-primary/20 rounded-lg focus:border-primary focus:outline-none"
             required
           />
         </div>
         {error && <p className="text-red-500">{error}</p>}
         {mode === 'signUp' && (
-          <div className="text-sm text-gray-500 mb-4">
+          <div className="text-sm text-text/70 mb-4">
             Password must contain:
             <ul className="list-disc ml-5">
               <li>At least 8 characters</li>
@@ -144,7 +144,7 @@ export default function AuthUI() {
         <button
           type="submit"
           disabled={loading || !email || !password}
-          className="w-full px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 disabled:opacity-50"
+          className="w-full px-4 py-2 text-white bg-primary rounded-lg hover:bg-primary/90 disabled:bg-primary/50 transition-colors"
         >
           {loading ? 'Processing...' : mode === 'signIn' ? 'Sign In' : 'Sign Up'}
         </button>
@@ -155,7 +155,7 @@ export default function AuthUI() {
             Don't have an account?{' '}
             <button
               onClick={() => setMode('signUp')}
-              className="text-blue-600 hover:underline"
+              className="text-primary hover:text-primary/80 font-medium bg-transparent p-0"
             >
               Sign Up
             </button>
@@ -165,7 +165,7 @@ export default function AuthUI() {
             Already have an account?{' '}
             <button
               onClick={() => setMode('signIn')}
-              className="text-blue-600 hover:underline"
+              className="text-primary hover:text-primary/80 font-medium bg-transparent p-0"
             >
               Sign In
             </button>

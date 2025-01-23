@@ -1,225 +1,200 @@
-# Fairwinds RV Maintenance App - Technical Implementation Roadmap
+# Fairwinds RV Maintenance App - Technical Implementation Plan
 
-## Technology Stack Overview
+## Core Technology Stack
 
-### Frontend Technologies
-- **Framework**: Next.js 14 (React)
-  - Provides built-in PWA capabilities
-  - Server-side rendering for better performance
+### Frontend (Free)
+- **Framework**: Next.js 14
+  - Built-in PWA capabilities
+  - Server-side rendering
+  - Image optimization with next/image
   - File-system based routing
 
-- **UI Components & Styling**
-  - TailwindCSS for styling
-  - Headless UI for accessible components
-  - React Icons for iconography
-
-- **PWA Requirements**
-  - Manifest.json for app installation
+- **State & Data Management**
+  - Zustand for state management (lightweight, offline-capable)
+  - React Hook Form for form handling
+  - IndexedDB for offline storage
   - Service Workers for offline functionality
-  - IndexedDB for local data storage
-  - Push notification support
 
-### Backend Technologies (AWS Amplify)
+- **UI & Styling**
+  - TailwindCSS
+  - Native HTML5 components (mobile-friendly)
+  - System-native file pickers and camera API
+
+### Backend (AWS Free Tier)
 - **Authentication**: Amazon Cognito
+  - Free tier: 50,000 MAU
+  - Email/password auth
+  - Session management
+
 - **Database**: DynamoDB
+  - Free tier: 25GB storage
+  - NoSQL flexibility
+  - Offline sync support
+
 - **Storage**: S3
+  - Free tier: 5GB
+  - Photo storage
+  - Document storage
+
 - **API**: AppSync with GraphQL
+  - Free tier: 250,000 queries
+  - Real-time capabilities
+  - Offline sync
+
 - **Hosting**: Amplify Hosting
-
-### Development Tools
-- **IDE**: Visual Studio Code
-  - Required Extensions:
-    - AWS Toolkit
-    - ES7+ React/Redux/GraphQL
-    - Tailwind CSS IntelliSense
-    - ESLint
-    - Prettier
-
-- **Version Control**
-  - GitHub
-  - GitHub Desktop for GUI-based version control
-
-- **Testing Tools**
-  - Jest for unit testing
-  - React Testing Library for component testing
-  - Cypress for end-to-end testing
+  - ~$5-10/month
+  - Global CDN
+  - SSL certificates
 
 ## Implementation Phases
 
-### Phase 1: Development Environment Setup (Week 1-2)
-1. Install required software:
-   - Node.js
-   - VS Code
-   - GitHub Desktop
-   - AWS Amplify CLI
+### Phase 1: Personal Tool (Weeks 1-3)
+1. RV Profile Management
+   - Single RV profile
+   - Basic info storage
+   - Photo upload capability
+   - Offline access
 
-2. Configure development environment:
-   ```bash
-   # Initial project setup
-   npm init next-app fairwinds-rv
-   cd fairwinds-rv
-   npm install @aws-amplify/cli -g
-   amplify configure
-   ```
+2. Basic Maintenance Tracking
+   - Maintenance records
+   - Photo attachments
+   - Service history
+   - Basic reminders
 
-3. Set up version control:
-   - Initialize Git repository
-   - Connect to GitHub
-   - Set up .gitignore
+### Phase 2: Enhanced Features (Weeks 4-6)
+1. Document Management
+   - Manual storage
+   - Maintenance docs
+   - Receipt tracking
+   - Offline access
 
-### Phase 2: AWS Infrastructure Setup (Week 3-4)
-1. Initialize Amplify project:
-   ```bash
-   amplify init
-   amplify add auth
-   amplify add api
-   amplify add storage
-   amplify add hosting
-   ```
+2. Maintenance Planning
+   - Scheduled maintenance
+   - Custom intervals
+   - Basic notifications
+   - Export capability
 
-2. Configure GraphQL Schema:
-   ```graphql
-   # Basic data models
-   type User @model {
-     id: ID!
-     email: String!
-     rv: [RV] @hasMany
-   }
+### Phase 3: Sharing & Community (Weeks 7-9)
+1. Multi-User Support
+   - Basic profiles
+   - Maintenance tips sharing
+   - Community features
 
-   type RV @model {
-     id: ID!
-     make: String!
-     model: String!
-     year: Int!
-     maintenanceRecords: [MaintenanceRecord] @hasMany
-   }
+2. Parts & Services
+   - Amazon affiliate links
+   - Basic parts lookup
+   - Service manual links
 
-   type MaintenanceRecord @model {
-     id: ID!
-     title: String!
-     date: AWSDateTime!
-     notes: String
-     photos: [String]
-   }
-   ```
+## Data Models
 
-### Phase 3: PWA Foundation (Week 5-6)
-1. Configure Next.js for PWA:
-   - Set up manifest.json
-   - Configure service workers
-   - Implement offline functionality
-   - Set up push notifications
+```graphql
+type User @model {
+  id: ID!
+  email: String!
+  rv: RV @hasOne
+}
 
-2. Implement authentication flows:
-   - User registration
-   - Login/logout
-   - Password recovery
-   - Session management
+type RV @model {
+  id: ID!
+  make: String!
+  model: String!
+  year: Int!
+  photos: [String]
+  documents: [Document] @hasMany
+  maintenanceRecords: [MaintenanceRecord] @hasMany
+}
 
-### Phase 4: Core Features Implementation (Week 7-10)
-1. RV Profile Management:
-   - Create/edit RV profiles
-   - Upload RV photos
-   - Store basic specifications
+type MaintenanceRecord @model {
+  id: ID!
+  title: String!
+  date: AWSDateTime!
+  type: String!
+  notes: String
+  photos: [String]
+  documents: [Document] @hasMany
+}
 
-2. Maintenance Tracking:
-   - Create maintenance records
-   - Set up maintenance schedules
-   - Implement reminders
-   - Photo/document upload
-
-3. Offline Capabilities:
-   - Local data storage
-   - Data synchronization
-   - Offline maintenance logging
-
-### Phase 5: Testing & Optimization (Week 11-12)
-1. Implement testing:
-   ```bash
-   # Install testing dependencies
-   npm install --save-dev jest @testing-library/react cypress
-   ```
-
-2. Performance optimization:
-   - Image optimization
-   - Code splitting
-   - Cache strategy
-   - Bundle size optimization
-
-### Phase 6: Deployment & Monitoring (Week 13)
-1. Production deployment:
-   ```bash
-   amplify push
-   amplify publish
-   ```
-
-2. Set up monitoring:
-   - AWS CloudWatch
-   - Error tracking
-   - Usage analytics
-
-## Development Best Practices
-
-### Code Organization
-```
-fairwinds-rv/
-├── src/
-│   ├── components/      # Reusable UI components
-│   ├── pages/          # Next.js pages
-│   ├── hooks/          # Custom React hooks
-│   ├── utils/          # Helper functions
-│   ├── styles/         # Global styles
-│   └── graphql/        # GraphQL operations
-├── public/             # Static assets
-│   ├── manifest.json
-│   └── service-worker.js
-└── amplify/           # AWS Amplify configuration
+type Document @model {
+  id: ID!
+  title: String!
+  type: String!
+  url: String!
+  tags: [String]
+}
 ```
 
-### Version Control Strategy
-- Main branch: production code
-- Development branch: active development
-- Feature branches: new features
-- Regular commits with descriptive messages
+## Development Setup
+```bash
+# Project setup
+npm create next-app@latest fairwinds --typescript --tailwind --app
+cd fairwinds
 
-### Testing Strategy
-- Unit tests for utilities and hooks
-- Component tests for UI elements
-- End-to-end tests for critical user flows
-- Regular testing during development
+# Add dependencies
+npm install @aws-amplify/ui-react aws-amplify zustand react-hook-form
 
-## Performance Targets
-- Lighthouse Score targets:
-  - Performance: > 90
-  - Accessibility: > 90
-  - Best Practices: > 90
-  - SEO: > 90
-- Offline functionality: 100% core features
-- Initial load time: < 3 seconds on 4G
-- Time to Interactive: < 5 seconds
+# Initialize Amplify
+amplify init
+amplify add auth
+amplify add api
+amplify add storage
+```
 
-## Maintenance & Updates
-- Regular dependency updates
-- Monthly security audits
-- Performance monitoring
-- User feedback collection
+## Mobile-First Development Guidelines
+
+1. PWA Requirements
+   - Manifest.json configuration
+   - Service worker setup
+   - Offline data sync
+   - Touch-friendly UI
+
+2. Performance Targets
+   - Initial load < 3s on 4G
+   - Offline functionality for core features
+   - Minimal battery usage
+   - Efficient data sync
+
+3. Storage Strategy
+   - IndexedDB for offline data
+   - S3 for cloud storage
+   - Efficient sync mechanism
+   - Storage quota management
+
+## Testing Strategy
+- Basic Jest unit tests
+- React Testing Library
+- Mobile browser testing
+- Offline capability testing
+
+## Deployment Process
+1. Development testing
+2. AWS Amplify deployment
+3. PWA validation
+4. Mobile testing
+
+## Cost Management
+- Monitor AWS usage
+- Stay within free tiers
+- Optimize storage usage
+- Efficient data queries
 
 ## Future Considerations
 - Multiple RV support
-- Advanced maintenance tracking
-- Document storage
-- Integration with service providers
-- Analytics dashboard
+- Enhanced offline capabilities
+- Community features
+- Marketplace integration
 
-## Resources & Documentation
-- AWS Amplify Docs: https://docs.amplify.aws/
-- Next.js Docs: https://nextjs.org/docs
-- PWA Requirements: https://web.dev/progressive-web-apps/
-- React Testing: https://testing-library.com/docs/react-testing-library/intro/
+## Monthly Cost Estimate
+- Amplify Hosting: ~$5-10
+- DynamoDB: Free tier
+- S3: ~$1-2
+- AppSync: Free tier
+- Cognito: Free tier
+Total: ~$15/month
 
 ## Notes
-- This document should be updated as development progresses
-- Regular reviews of this roadmap should be conducted
-- Adjustments should be made based on development experience and user feedback
+- Focus on personal utility first
+- Gradual feature expansion
+- Cost-conscious development
+- Mobile-first approach
 
-Last Updated: January 22, 2025
+Last Updated: January 23, 2025

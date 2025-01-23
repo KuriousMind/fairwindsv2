@@ -3,6 +3,7 @@
 import AuthUI from '@/components/AuthUI'
 import { useAuth } from '@/components/AuthProvider'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   const { isAuthenticated, isLoading } = useAuth()
@@ -35,9 +36,20 @@ export default function Home() {
         <div className="p-6 bg-white rounded-lg shadow-lg border-2 border-accent">
           <h1 className="text-3xl font-bold mb-4 text-heading">Welcome to Fairwinds</h1>
           <p className="text-text mb-6">You are now signed in! Ready to maintain your vessel?</p>
-          <button className="w-full py-2 px-4 rounded-lg bg-primary text-white font-bold hover:opacity-90 transition-opacity">
-            View Maintenance Tasks
-          </button>
+          <div className="space-y-4">
+            <Link 
+              href="/rv/new"
+              className="block w-full py-2 px-4 rounded-lg bg-primary text-white font-bold hover:opacity-90 transition-opacity text-center"
+            >
+              Create RV Profile
+            </Link>
+            <Link 
+              href="/dashboard"
+              className="block w-full py-2 px-4 rounded-lg bg-accent text-white font-bold hover:opacity-90 transition-opacity text-center"
+            >
+              View Maintenance Tasks
+            </Link>
+          </div>
         </div>
       )}
     </main>

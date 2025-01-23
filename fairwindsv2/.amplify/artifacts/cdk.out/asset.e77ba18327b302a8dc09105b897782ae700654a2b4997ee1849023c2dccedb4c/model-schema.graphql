@@ -1,0 +1,53 @@
+type RV @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  make: String
+  model: String
+  year: Int
+  vin: String
+  ownerEmail: String
+  notes: String
+}
+
+type MaintenanceRecord @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  title: String
+  date: AWSDateTime
+  description: String
+  type: MaintenanceRecordType
+  status: MaintenanceRecordStatus
+  cost: Float
+  notes: String
+  photos: String
+  rvID: String
+  ownerEmail: String
+}
+
+type MaintenanceSchedule @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  title: String
+  frequency: MaintenanceScheduleFrequency
+  nextDueDate: AWSDateTime
+  description: String
+  isRecurring: Boolean
+  rvID: String
+  ownerEmail: String
+}
+
+enum MaintenanceRecordType {
+  scheduled
+  repair
+  upgrade
+}
+
+enum MaintenanceRecordStatus {
+  pending
+  completed
+}
+
+enum MaintenanceScheduleFrequency {
+  once
+  weekly
+  monthly
+  quarterly
+  yearly
+}

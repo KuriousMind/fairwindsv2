@@ -7,11 +7,43 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Todo: a
+  RV: a
     .model({
-      content: a.string(),
+      make: a.string(),
+      model: a.string(),
+      year: a.integer(),
+      vin: a.string(),  // Optional by default
+      ownerEmail: a.string(), // Link to authenticated user
+      notes: a.string(), // Optional by default
     })
-    .authorization((allow) => [allow.guest()]),
+    .authorization((allow) => allow.owner()),
+
+  MaintenanceRecord: a
+    .model({
+      title: a.string(),
+      date: a.datetime(),
+      description: a.string(),
+      type: a.enum(['scheduled', 'repair', 'upgrade']),
+      status: a.enum(['pending', 'completed']),
+      cost: a.float(), // Optional by default
+      notes: a.string(), // Optional by default
+      photos: a.string(), // Store as comma-separated URLs, optional by default
+      rvID: a.string(), // Reference to RV
+      ownerEmail: a.string(), // Link to authenticated user
+    })
+    .authorization((allow) => allow.owner()),
+
+  MaintenanceSchedule: a
+    .model({
+      title: a.string(),
+      frequency: a.enum(['once', 'weekly', 'monthly', 'quarterly', 'yearly']),
+      nextDueDate: a.datetime(),
+      description: a.string(),
+      isRecurring: a.boolean(),
+      rvID: a.string(), // Reference to RV
+      ownerEmail: a.string(), // Link to authenticated user
+    })
+    .authorization((allow) => allow.owner()),
 });
 
 export type Schema = ClientSchema<typeof schema>;

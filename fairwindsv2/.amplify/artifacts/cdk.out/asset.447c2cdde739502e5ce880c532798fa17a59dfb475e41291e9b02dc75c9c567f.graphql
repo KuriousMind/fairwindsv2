@@ -1,0 +1,515 @@
+type RV @aws_cognito_user_pools @aws_iam {
+  make: String
+  model: String
+  year: Int
+  vin: String
+  ownerEmail: String
+  notes: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type MaintenanceRecord @aws_cognito_user_pools @aws_iam {
+  title: String
+  date: AWSDateTime
+  description: String
+  type: MaintenanceRecordType
+  status: MaintenanceRecordStatus
+  cost: Float
+  notes: String
+  photos: String
+  rvID: String
+  ownerEmail: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type MaintenanceSchedule @aws_cognito_user_pools @aws_iam {
+  title: String
+  frequency: MaintenanceScheduleFrequency
+  nextDueDate: AWSDateTime
+  description: String
+  isRecurring: Boolean
+  rvID: String
+  ownerEmail: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+enum MaintenanceRecordType {
+  scheduled
+  repair
+  upgrade
+}
+
+enum MaintenanceRecordStatus {
+  pending
+  completed
+}
+
+enum MaintenanceScheduleFrequency {
+  once
+  weekly
+  monthly
+  quarterly
+  yearly
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelRVConnection @aws_cognito_user_pools @aws_iam {
+  items: [RV]!
+  nextToken: String
+}
+
+input ModelRVFilterInput {
+  make: ModelStringInput
+  model: ModelStringInput
+  year: ModelIntInput
+  vin: ModelStringInput
+  ownerEmail: ModelStringInput
+  notes: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelRVFilterInput]
+  or: [ModelRVFilterInput]
+  not: ModelRVFilterInput
+  owner: ModelStringInput
+}
+
+type Query {
+  getRV(id: ID!): RV @aws_cognito_user_pools @aws_iam
+  listRVS(filter: ModelRVFilterInput, limit: Int, nextToken: String): ModelRVConnection @aws_cognito_user_pools @aws_iam
+  getMaintenanceRecord(id: ID!): MaintenanceRecord @aws_cognito_user_pools @aws_iam
+  listMaintenanceRecords(filter: ModelMaintenanceRecordFilterInput, limit: Int, nextToken: String): ModelMaintenanceRecordConnection @aws_cognito_user_pools @aws_iam
+  getMaintenanceSchedule(id: ID!): MaintenanceSchedule @aws_cognito_user_pools @aws_iam
+  listMaintenanceSchedules(filter: ModelMaintenanceScheduleFilterInput, limit: Int, nextToken: String): ModelMaintenanceScheduleConnection @aws_cognito_user_pools @aws_iam
+}
+
+input ModelRVConditionInput {
+  make: ModelStringInput
+  model: ModelStringInput
+  year: ModelIntInput
+  vin: ModelStringInput
+  ownerEmail: ModelStringInput
+  notes: ModelStringInput
+  and: [ModelRVConditionInput]
+  or: [ModelRVConditionInput]
+  not: ModelRVConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateRVInput {
+  make: String
+  model: String
+  year: Int
+  vin: String
+  ownerEmail: String
+  notes: String
+  id: ID
+}
+
+input UpdateRVInput {
+  make: String
+  model: String
+  year: Int
+  vin: String
+  ownerEmail: String
+  notes: String
+  id: ID!
+}
+
+input DeleteRVInput {
+  id: ID!
+}
+
+type Mutation {
+  createRV(input: CreateRVInput!, condition: ModelRVConditionInput): RV @aws_cognito_user_pools @aws_iam
+  updateRV(input: UpdateRVInput!, condition: ModelRVConditionInput): RV @aws_cognito_user_pools @aws_iam
+  deleteRV(input: DeleteRVInput!, condition: ModelRVConditionInput): RV @aws_cognito_user_pools @aws_iam
+  createMaintenanceRecord(input: CreateMaintenanceRecordInput!, condition: ModelMaintenanceRecordConditionInput): MaintenanceRecord @aws_cognito_user_pools @aws_iam
+  updateMaintenanceRecord(input: UpdateMaintenanceRecordInput!, condition: ModelMaintenanceRecordConditionInput): MaintenanceRecord @aws_cognito_user_pools @aws_iam
+  deleteMaintenanceRecord(input: DeleteMaintenanceRecordInput!, condition: ModelMaintenanceRecordConditionInput): MaintenanceRecord @aws_cognito_user_pools @aws_iam
+  createMaintenanceSchedule(input: CreateMaintenanceScheduleInput!, condition: ModelMaintenanceScheduleConditionInput): MaintenanceSchedule @aws_cognito_user_pools @aws_iam
+  updateMaintenanceSchedule(input: UpdateMaintenanceScheduleInput!, condition: ModelMaintenanceScheduleConditionInput): MaintenanceSchedule @aws_cognito_user_pools @aws_iam
+  deleteMaintenanceSchedule(input: DeleteMaintenanceScheduleInput!, condition: ModelMaintenanceScheduleConditionInput): MaintenanceSchedule @aws_cognito_user_pools @aws_iam
+}
+
+input ModelSubscriptionRVFilterInput {
+  make: ModelSubscriptionStringInput
+  model: ModelSubscriptionStringInput
+  year: ModelSubscriptionIntInput
+  vin: ModelSubscriptionStringInput
+  ownerEmail: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionRVFilterInput]
+  or: [ModelSubscriptionRVFilterInput]
+  owner: ModelStringInput
+}
+
+type Subscription {
+  onCreateRV(filter: ModelSubscriptionRVFilterInput, owner: String): RV @aws_subscribe(mutations: ["createRV"]) @aws_cognito_user_pools @aws_iam
+  onUpdateRV(filter: ModelSubscriptionRVFilterInput, owner: String): RV @aws_subscribe(mutations: ["updateRV"]) @aws_cognito_user_pools @aws_iam
+  onDeleteRV(filter: ModelSubscriptionRVFilterInput, owner: String): RV @aws_subscribe(mutations: ["deleteRV"]) @aws_cognito_user_pools @aws_iam
+  onCreateMaintenanceRecord(filter: ModelSubscriptionMaintenanceRecordFilterInput, owner: String): MaintenanceRecord @aws_subscribe(mutations: ["createMaintenanceRecord"]) @aws_cognito_user_pools @aws_iam
+  onUpdateMaintenanceRecord(filter: ModelSubscriptionMaintenanceRecordFilterInput, owner: String): MaintenanceRecord @aws_subscribe(mutations: ["updateMaintenanceRecord"]) @aws_cognito_user_pools @aws_iam
+  onDeleteMaintenanceRecord(filter: ModelSubscriptionMaintenanceRecordFilterInput, owner: String): MaintenanceRecord @aws_subscribe(mutations: ["deleteMaintenanceRecord"]) @aws_cognito_user_pools @aws_iam
+  onCreateMaintenanceSchedule(filter: ModelSubscriptionMaintenanceScheduleFilterInput, owner: String): MaintenanceSchedule @aws_subscribe(mutations: ["createMaintenanceSchedule"]) @aws_cognito_user_pools @aws_iam
+  onUpdateMaintenanceSchedule(filter: ModelSubscriptionMaintenanceScheduleFilterInput, owner: String): MaintenanceSchedule @aws_subscribe(mutations: ["updateMaintenanceSchedule"]) @aws_cognito_user_pools @aws_iam
+  onDeleteMaintenanceSchedule(filter: ModelSubscriptionMaintenanceScheduleFilterInput, owner: String): MaintenanceSchedule @aws_subscribe(mutations: ["deleteMaintenanceSchedule"]) @aws_cognito_user_pools @aws_iam
+}
+
+type ModelMaintenanceRecordConnection @aws_cognito_user_pools @aws_iam {
+  items: [MaintenanceRecord]!
+  nextToken: String
+}
+
+input ModelMaintenanceRecordTypeInput {
+  eq: MaintenanceRecordType
+  ne: MaintenanceRecordType
+}
+
+input ModelMaintenanceRecordStatusInput {
+  eq: MaintenanceRecordStatus
+  ne: MaintenanceRecordStatus
+}
+
+input ModelMaintenanceRecordFilterInput {
+  title: ModelStringInput
+  date: ModelStringInput
+  description: ModelStringInput
+  type: ModelMaintenanceRecordTypeInput
+  status: ModelMaintenanceRecordStatusInput
+  cost: ModelFloatInput
+  notes: ModelStringInput
+  photos: ModelStringInput
+  rvID: ModelStringInput
+  ownerEmail: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelMaintenanceRecordFilterInput]
+  or: [ModelMaintenanceRecordFilterInput]
+  not: ModelMaintenanceRecordFilterInput
+  owner: ModelStringInput
+}
+
+input ModelMaintenanceRecordConditionInput {
+  title: ModelStringInput
+  date: ModelStringInput
+  description: ModelStringInput
+  type: ModelMaintenanceRecordTypeInput
+  status: ModelMaintenanceRecordStatusInput
+  cost: ModelFloatInput
+  notes: ModelStringInput
+  photos: ModelStringInput
+  rvID: ModelStringInput
+  ownerEmail: ModelStringInput
+  and: [ModelMaintenanceRecordConditionInput]
+  or: [ModelMaintenanceRecordConditionInput]
+  not: ModelMaintenanceRecordConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateMaintenanceRecordInput {
+  title: String
+  date: AWSDateTime
+  description: String
+  type: MaintenanceRecordType
+  status: MaintenanceRecordStatus
+  cost: Float
+  notes: String
+  photos: String
+  rvID: String
+  ownerEmail: String
+  id: ID
+}
+
+input UpdateMaintenanceRecordInput {
+  title: String
+  date: AWSDateTime
+  description: String
+  type: MaintenanceRecordType
+  status: MaintenanceRecordStatus
+  cost: Float
+  notes: String
+  photos: String
+  rvID: String
+  ownerEmail: String
+  id: ID!
+}
+
+input DeleteMaintenanceRecordInput {
+  id: ID!
+}
+
+input ModelSubscriptionMaintenanceRecordFilterInput {
+  title: ModelSubscriptionStringInput
+  date: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  type: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  cost: ModelSubscriptionFloatInput
+  notes: ModelSubscriptionStringInput
+  photos: ModelSubscriptionStringInput
+  rvID: ModelSubscriptionStringInput
+  ownerEmail: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionMaintenanceRecordFilterInput]
+  or: [ModelSubscriptionMaintenanceRecordFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelMaintenanceScheduleConnection @aws_cognito_user_pools @aws_iam {
+  items: [MaintenanceSchedule]!
+  nextToken: String
+}
+
+input ModelMaintenanceScheduleFrequencyInput {
+  eq: MaintenanceScheduleFrequency
+  ne: MaintenanceScheduleFrequency
+}
+
+input ModelMaintenanceScheduleFilterInput {
+  title: ModelStringInput
+  frequency: ModelMaintenanceScheduleFrequencyInput
+  nextDueDate: ModelStringInput
+  description: ModelStringInput
+  isRecurring: ModelBooleanInput
+  rvID: ModelStringInput
+  ownerEmail: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelMaintenanceScheduleFilterInput]
+  or: [ModelMaintenanceScheduleFilterInput]
+  not: ModelMaintenanceScheduleFilterInput
+  owner: ModelStringInput
+}
+
+input ModelMaintenanceScheduleConditionInput {
+  title: ModelStringInput
+  frequency: ModelMaintenanceScheduleFrequencyInput
+  nextDueDate: ModelStringInput
+  description: ModelStringInput
+  isRecurring: ModelBooleanInput
+  rvID: ModelStringInput
+  ownerEmail: ModelStringInput
+  and: [ModelMaintenanceScheduleConditionInput]
+  or: [ModelMaintenanceScheduleConditionInput]
+  not: ModelMaintenanceScheduleConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateMaintenanceScheduleInput {
+  title: String
+  frequency: MaintenanceScheduleFrequency
+  nextDueDate: AWSDateTime
+  description: String
+  isRecurring: Boolean
+  rvID: String
+  ownerEmail: String
+  id: ID
+}
+
+input UpdateMaintenanceScheduleInput {
+  title: String
+  frequency: MaintenanceScheduleFrequency
+  nextDueDate: AWSDateTime
+  description: String
+  isRecurring: Boolean
+  rvID: String
+  ownerEmail: String
+  id: ID!
+}
+
+input DeleteMaintenanceScheduleInput {
+  id: ID!
+}
+
+input ModelSubscriptionMaintenanceScheduleFilterInput {
+  title: ModelSubscriptionStringInput
+  frequency: ModelSubscriptionStringInput
+  nextDueDate: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  isRecurring: ModelSubscriptionBooleanInput
+  rvID: ModelSubscriptionStringInput
+  ownerEmail: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionMaintenanceScheduleFilterInput]
+  or: [ModelSubscriptionMaintenanceScheduleFilterInput]
+  owner: ModelStringInput
+}

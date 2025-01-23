@@ -1,0 +1,2112 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustoF6F1C68D": {
+   "Type": "String"
+  },
+  "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName": {
+   "Type": "String"
+  },
+  "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef": {
+   "Type": "String"
+  },
+  "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUseServerSideEncryption": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnableServerSideEncryption"
+    },
+    "true"
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "MaintenanceScheduleTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustoF6F1C68D"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "MaintenanceSchedule-",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": {
+      "Fn::If": [
+       "ShouldUseServerSideEncryption",
+       true,
+       false
+      ]
+     }
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleTable/Default/Default"
+   }
+  },
+  "MaintenanceScheduleIAMRole4B486FC5": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "MaintenanceSchedule-",
+                {
+                 "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "MaintenanceSchedule-",
+                {
+                 "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "MaintenanceScheduleI34e386-",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleIAMRole/Resource"
+   }
+  },
+  "MaintenanceScheduleDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "MaintenanceScheduleTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "MaintenanceScheduleTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleIAMRole4B486FC5",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "MaintenanceScheduleIAMRole4B486FC5"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleDataSource/Resource"
+   }
+  },
+  "QuerygetMaintenanceScheduleauth0FunctionQuerygetMaintenanceScheduleauth0FunctionAppSyncFunction486B5F3B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetMaintenanceScheduleauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerygetMaintenanceScheduleauth0Function/QuerygetMaintenanceScheduleauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetMaintenanceSchedulepostAuth0FunctionQuerygetMaintenanceSchedulepostAuth0FunctionAppSyncFunction6CD7199A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetMaintenanceSchedulepostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerygetMaintenanceSchedulepostAuth0Function/QuerygetMaintenanceSchedulepostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetMaintenanceScheduleDataResolverFnQueryGetMaintenanceScheduleDataResolverFnAppSyncFunctionA7D12B99": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetMaintenanceScheduleDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "MaintenanceScheduleDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QueryGetMaintenanceScheduleDataResolverFn/QueryGetMaintenanceScheduleDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "getMaintenanceSchedule",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetMaintenanceScheduleauth0FunctionQuerygetMaintenanceScheduleauth0FunctionAppSyncFunction486B5F3B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetMaintenanceSchedulepostAuth0FunctionQuerygetMaintenanceSchedulepostAuth0FunctionAppSyncFunction6CD7199A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetMaintenanceScheduleDataResolverFnQueryGetMaintenanceScheduleDataResolverFnAppSyncFunctionA7D12B99",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getMaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MaintenanceScheduleTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/queryGetMaintenanceScheduleResolver"
+   }
+  },
+  "QuerylistMaintenanceSchedulesauth0FunctionQuerylistMaintenanceSchedulesauth0FunctionAppSyncFunction92356C0C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistMaintenanceSchedulesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerylistMaintenanceSchedulesauth0Function/QuerylistMaintenanceSchedulesauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistMaintenanceSchedulespostAuth0FunctionQuerylistMaintenanceSchedulespostAuth0FunctionAppSyncFunction08A52320": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistMaintenanceSchedulespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerylistMaintenanceSchedulespostAuth0Function/QuerylistMaintenanceSchedulespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListMaintenanceSchedulesDataResolverFnQueryListMaintenanceSchedulesDataResolverFnAppSyncFunction72058E65": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListMaintenanceSchedulesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "MaintenanceScheduleDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QueryListMaintenanceSchedulesDataResolverFn/QueryListMaintenanceSchedulesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "listMaintenanceSchedules",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistMaintenanceSchedulesauth0FunctionQuerylistMaintenanceSchedulesauth0FunctionAppSyncFunction92356C0C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistMaintenanceSchedulespostAuth0FunctionQuerylistMaintenanceSchedulespostAuth0FunctionAppSyncFunction08A52320",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListMaintenanceSchedulesDataResolverFnQueryListMaintenanceSchedulesDataResolverFnAppSyncFunction72058E65",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listMaintenanceSchedules\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MaintenanceScheduleTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/queryListMaintenanceSchedulesResolver"
+   }
+  },
+  "MutationcreateMaintenanceScheduleinit0FunctionMutationcreateMaintenanceScheduleinit0FunctionAppSyncFunction980A6ECE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateMaintenanceScheduleinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationcreateMaintenanceScheduleinit0Function/MutationcreateMaintenanceScheduleinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateMaintenanceScheduleauth0FunctionMutationcreateMaintenanceScheduleauth0FunctionAppSyncFunction842A329E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateMaintenanceScheduleauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/59fe0bc62f5c18e6079bc53277a53d9ef614c78d8a54896b5c0a017011944ca5.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationcreateMaintenanceScheduleauth0Function/MutationcreateMaintenanceScheduleauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateMaintenanceSchedulepostAuth0FunctionMutationcreateMaintenanceSchedulepostAuth0FunctionAppSyncFunctionE886EC28": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateMaintenanceSchedulepostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationcreateMaintenanceSchedulepostAuth0Function/MutationcreateMaintenanceSchedulepostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateMaintenanceScheduleDataResolverFnMutationCreateMaintenanceScheduleDataResolverFnAppSyncFunctionE0BAC5A4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateMaintenanceScheduleDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06596befb41e0bf47376746d58eeb0d1eac8cea031dc9307499101cc7efb550b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "MaintenanceScheduleDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationCreateMaintenanceScheduleDataResolverFn/MutationCreateMaintenanceScheduleDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "createMaintenanceSchedule",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateMaintenanceScheduleinit0FunctionMutationcreateMaintenanceScheduleinit0FunctionAppSyncFunction980A6ECE",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateMaintenanceScheduleauth0FunctionMutationcreateMaintenanceScheduleauth0FunctionAppSyncFunction842A329E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateMaintenanceSchedulepostAuth0FunctionMutationcreateMaintenanceSchedulepostAuth0FunctionAppSyncFunctionE886EC28",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateMaintenanceScheduleDataResolverFnMutationCreateMaintenanceScheduleDataResolverFnAppSyncFunctionE0BAC5A4",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createMaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MaintenanceScheduleTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/mutationCreateMaintenanceScheduleResolver"
+   }
+  },
+  "MutationupdateMaintenanceScheduleinit0FunctionMutationupdateMaintenanceScheduleinit0FunctionAppSyncFunction6E074660": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateMaintenanceScheduleinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationupdateMaintenanceScheduleinit0Function/MutationupdateMaintenanceScheduleinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateMaintenanceScheduleauth0FunctionMutationupdateMaintenanceScheduleauth0FunctionAppSyncFunction052AE0DB": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateMaintenanceScheduleauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/37f46688c7de7bec4a34dd13001df90002b03cf74119ea54a928180ad920b5d6.vtl"
+    }
+   },
+   "DependsOn": [
+    "MaintenanceScheduleDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationupdateMaintenanceScheduleauth0Function/MutationupdateMaintenanceScheduleauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateMaintenanceSchedulepostAuth0FunctionMutationupdateMaintenanceSchedulepostAuth0FunctionAppSyncFunction6305D9E1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateMaintenanceSchedulepostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationupdateMaintenanceSchedulepostAuth0Function/MutationupdateMaintenanceSchedulepostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateMaintenanceScheduleDataResolverFnMutationUpdateMaintenanceScheduleDataResolverFnAppSyncFunction83893AA3": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateMaintenanceScheduleDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "MaintenanceScheduleDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationUpdateMaintenanceScheduleDataResolverFn/MutationUpdateMaintenanceScheduleDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "updateMaintenanceSchedule",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateMaintenanceScheduleinit0FunctionMutationupdateMaintenanceScheduleinit0FunctionAppSyncFunction6E074660",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateMaintenanceScheduleauth0FunctionMutationupdateMaintenanceScheduleauth0FunctionAppSyncFunction052AE0DB",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateMaintenanceSchedulepostAuth0FunctionMutationupdateMaintenanceSchedulepostAuth0FunctionAppSyncFunction6305D9E1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateMaintenanceScheduleDataResolverFnMutationUpdateMaintenanceScheduleDataResolverFnAppSyncFunction83893AA3",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateMaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MaintenanceScheduleTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/mutationUpdateMaintenanceScheduleResolver"
+   }
+  },
+  "MutationdeleteMaintenanceScheduleauth0FunctionMutationdeleteMaintenanceScheduleauth0FunctionAppSyncFunction5D78559E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteMaintenanceScheduleauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/867fb7d7eb8e4127b6d0136b82c5c3f74a52eb410297086859986f8e7e4b02aa.vtl"
+    }
+   },
+   "DependsOn": [
+    "MaintenanceScheduleDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationdeleteMaintenanceScheduleauth0Function/MutationdeleteMaintenanceScheduleauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteMaintenanceSchedulepostAuth0FunctionMutationdeleteMaintenanceSchedulepostAuth0FunctionAppSyncFunction6921425B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteMaintenanceSchedulepostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationdeleteMaintenanceSchedulepostAuth0Function/MutationdeleteMaintenanceSchedulepostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteMaintenanceScheduleDataResolverFnMutationDeleteMaintenanceScheduleDataResolverFnAppSyncFunctionBB1EB57C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MaintenanceScheduleDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteMaintenanceScheduleDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "MaintenanceScheduleDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationDeleteMaintenanceScheduleDataResolverFn/MutationDeleteMaintenanceScheduleDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "deleteMaintenanceSchedule",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteMaintenanceScheduleauth0FunctionMutationdeleteMaintenanceScheduleauth0FunctionAppSyncFunction5D78559E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteMaintenanceSchedulepostAuth0FunctionMutationdeleteMaintenanceSchedulepostAuth0FunctionAppSyncFunction6921425B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteMaintenanceScheduleDataResolverFnMutationDeleteMaintenanceScheduleDataResolverFnAppSyncFunctionBB1EB57C",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteMaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MaintenanceScheduleTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/mutationDeleteMaintenanceScheduleResolver"
+   }
+  },
+  "SubscriptiononCreateMaintenanceScheduleauth0FunctionSubscriptiononCreateMaintenanceScheduleauth0FunctionAppSyncFunction64B2BD53": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateMaintenanceScheduleauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononCreateMaintenanceScheduleauth0Function/SubscriptiononCreateMaintenanceScheduleauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateMaintenanceSchedulepostAuth0FunctionSubscriptiononCreateMaintenanceSchedulepostAuth0FunctionAppSyncFunction59184087": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateMaintenanceSchedulepostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononCreateMaintenanceSchedulepostAuth0Function/SubscriptiononCreateMaintenanceSchedulepostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateMaintenanceScheduleDataResolverFnSubscriptionOnCreateMaintenanceScheduleDataResolverFnAppSyncFunction0EDF2757": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateMaintenanceScheduleDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptionOnCreateMaintenanceScheduleDataResolverFn/SubscriptionOnCreateMaintenanceScheduleDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "onCreateMaintenanceSchedule",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateMaintenanceScheduleauth0FunctionSubscriptiononCreateMaintenanceScheduleauth0FunctionAppSyncFunction64B2BD53",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateMaintenanceSchedulepostAuth0FunctionSubscriptiononCreateMaintenanceSchedulepostAuth0FunctionAppSyncFunction59184087",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateMaintenanceScheduleDataResolverFnSubscriptionOnCreateMaintenanceScheduleDataResolverFnAppSyncFunction0EDF2757",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateMaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/subscriptionOnCreateMaintenanceScheduleResolver"
+   }
+  },
+  "SubscriptiononUpdateMaintenanceScheduleauth0FunctionSubscriptiononUpdateMaintenanceScheduleauth0FunctionAppSyncFunctionA95061E5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateMaintenanceScheduleauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononUpdateMaintenanceScheduleauth0Function/SubscriptiononUpdateMaintenanceScheduleauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateMaintenanceSchedulepostAuth0FunctionSubscriptiononUpdateMaintenanceSchedulepostAuth0FunctionAppSyncFunctionF6121095": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateMaintenanceSchedulepostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononUpdateMaintenanceSchedulepostAuth0Function/SubscriptiononUpdateMaintenanceSchedulepostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateMaintenanceScheduleDataResolverFnSubscriptionOnUpdateMaintenanceScheduleDataResolverFnAppSyncFunction99875810": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateMaintenanceScheduleDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptionOnUpdateMaintenanceScheduleDataResolverFn/SubscriptionOnUpdateMaintenanceScheduleDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "onUpdateMaintenanceSchedule",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateMaintenanceScheduleauth0FunctionSubscriptiononUpdateMaintenanceScheduleauth0FunctionAppSyncFunctionA95061E5",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateMaintenanceSchedulepostAuth0FunctionSubscriptiononUpdateMaintenanceSchedulepostAuth0FunctionAppSyncFunctionF6121095",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateMaintenanceScheduleDataResolverFnSubscriptionOnUpdateMaintenanceScheduleDataResolverFnAppSyncFunction99875810",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateMaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/subscriptionOnUpdateMaintenanceScheduleResolver"
+   }
+  },
+  "SubscriptiononDeleteMaintenanceScheduleauth0FunctionSubscriptiononDeleteMaintenanceScheduleauth0FunctionAppSyncFunctionE530E0CA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteMaintenanceScheduleauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononDeleteMaintenanceScheduleauth0Function/SubscriptiononDeleteMaintenanceScheduleauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteMaintenanceSchedulepostAuth0FunctionSubscriptiononDeleteMaintenanceSchedulepostAuth0FunctionAppSyncFunctionAE278DE0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteMaintenanceSchedulepostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononDeleteMaintenanceSchedulepostAuth0Function/SubscriptiononDeleteMaintenanceSchedulepostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteMaintenanceScheduleDataResolverFnSubscriptionOnDeleteMaintenanceScheduleDataResolverFnAppSyncFunctionDB4C86DF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteMaintenanceScheduleDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptionOnDeleteMaintenanceScheduleDataResolverFn/SubscriptionOnDeleteMaintenanceScheduleDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteMaintenanceScheduleResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "onDeleteMaintenanceSchedule",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteMaintenanceScheduleauth0FunctionSubscriptiononDeleteMaintenanceScheduleauth0FunctionAppSyncFunctionE530E0CA",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteMaintenanceSchedulepostAuth0FunctionSubscriptiononDeleteMaintenanceSchedulepostAuth0FunctionAppSyncFunctionAE278DE0",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteMaintenanceScheduleDataResolverFnSubscriptionOnDeleteMaintenanceScheduleDataResolverFnAppSyncFunctionDB4C86DF",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteMaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/subscriptionOnDeleteMaintenanceScheduleResolver"
+   }
+  },
+  "MaintenanceScheduleOwnerDataResolverFnMaintenanceScheduleOwnerDataResolverFnAppSyncFunction3FE5649B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MaintenanceScheduleOwnerDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/064303962e481067b44300212516363b99aaee539b6bafaf756fdd83ff0b60f0.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleOwnerDataResolverFn/MaintenanceScheduleOwnerDataResolverFn.AppSyncFunction"
+   }
+  },
+  "MaintenanceScheduleownerResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+    },
+    "FieldName": "owner",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MaintenanceScheduleOwnerDataResolverFnMaintenanceScheduleOwnerDataResolverFnAppSyncFunction3FE5649B",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"MaintenanceSchedule\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "MaintenanceSchedule"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/maintenanceScheduleOwnerResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOwW6DMAyGn6X34A2QtvMK2nGbYPfKJAalhATFTqsK8e4TdOq00+9P/mT/BeSvL/B8wCtn2oyZsx0sH8RCphXUo6p6/4URJxKKG1TBGys2eNUQhxQ1qSqxhOkPe/+Y8cqnxdw8TsF08I2doyMyKYsTLE1wdzs4WhXOM9+8hqXe9bqrUbB9nPxP78nrrUQVfG+HFHFv9PvZXSiuissTMpMwvG2huIRj0iPJVmDd3M8kcxK1r1vBwfphVT4YgjM/XYoC8hLyw5mtzWLyYieC5p4/Kq8WDjYBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttMaintenanceScheduleTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "MaintenanceScheduleTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "GetAtt:MaintenanceScheduleTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttMaintenanceScheduleTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "MaintenanceSchedule-",
+      {
+       "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+       },
+       "GetAtt:MaintenanceScheduleTable:Name"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

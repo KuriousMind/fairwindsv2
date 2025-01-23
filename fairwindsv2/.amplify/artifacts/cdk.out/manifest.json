@@ -1,0 +1,2284 @@
+{
+  "version": "39.0.0",
+  "artifacts": {
+    "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "amplify:deployment-type": "sandbox",
+          "created-by": "amplify"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/86fd6782f61b746f291d1bb5c3178ffd2ad014fef0b8c090af953bc1dc1dc8ca.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff.assets"
+      ],
+      "metadata": {
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "amplify:deployment-type",
+                "Value": "sandbox"
+              },
+              {
+                "Key": "created-by",
+                "Value": "amplify"
+              }
+            ]
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/deploymentType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deploymentType"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/region": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "region"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyAuth/UserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPool4BA7F805"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyAuth/UserPoolAppClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPoolAppClient2626C6F8"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyAuth/IdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPool3FDE84CC"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyAuth/authenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthauthenticatedUserRoleD8DA3689"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyAuth/unauthenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthunauthenticatedUserRole2B524D9E"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyAuth/IdentityPoolRoleAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPoolRoleAttachment045F17C8"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthUserPool03F917D5Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthUserPool03F917D5Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthUserPoolAppClient7F6C80DCRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthUserPoolAppClient7F6C80DCRef"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth/amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/auth.NestedStack/auth.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "auth179371D7"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/userPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "userPoolId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/webClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webClientId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/identityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "identityPoolId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/authRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "authRegion"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/allowUnauthenticatedIdentities": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "allowUnauthenticatedIdentities"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/signupAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "signupAttributes"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/usernameAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "usernameAttributes"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/verificationMechanisms": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "verificationMechanisms"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/passwordPolicyMinLength": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyMinLength"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/passwordPolicyRequirements": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyRequirements"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/mfaConfiguration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaConfiguration"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/mfaTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaTypes"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/socialProviders": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "socialProviders"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/oauthCognitoDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthCognitoDomain"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/oauthScope": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthScope"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/oauthRedirectSignIn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignIn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/oauthRedirectSignOut": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignOut"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/oauthResponseType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthResponseType"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/oauthClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthClientId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/groups": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "groups"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/GraphQLAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPI42A6FA33"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/GraphQLAPI/TransformerSchema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/GraphQLAPI/NONE_DS": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/GraphQLAPI/NONE_DS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPINONEDS684BF699"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/AmplifyManagedTableIsCompleteRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableIsCompleteRoleF825222C"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleB4E71DEA"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleDefaultPolicyF6DABCB6"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkonEvent1DFC2ECC"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-isComplete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkisComplete2E51021B"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRole470BE899"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRoleDefaultPolicy89F3836A"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachine060600BC"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager/amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventEB2DDEF7Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventEB2DDEF7Arn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyTableManager.NestedStack/AmplifyTableManager.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/ShouldUseServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUseServerSideEncryption"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/RVTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/RVTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RVTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/CustomTableRVTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/GetAttRVTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRVTableStreamArn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/GetAttRVTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttRVTableName"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/RVIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RVIAMRole"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/RVIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RVIAMRoleBF279F43"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RVIAMRole"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/RVDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RVTable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/RVDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RVDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RVTable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/QuerygetRVauth0Function/QuerygetRVauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRVauth0FunctionQuerygetRVauth0FunctionAppSyncFunction01E59B8A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRVauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/QuerygetRVpostAuth0Function/QuerygetRVpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetRVpostAuth0FunctionQuerygetRVpostAuth0FunctionAppSyncFunction3B3F2FC8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetRVpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/QueryGetRVDataResolverFn/QueryGetRVDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetRVDataResolverFnQueryGetRVDataResolverFnAppSyncFunction109ADDF2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetRVDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/queryGetRVResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getRV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/QuerylistRVSauth0Function/QuerylistRVSauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRVSauth0FunctionQuerylistRVSauth0FunctionAppSyncFunction3EAA8AAB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRVSauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/QuerylistRVSpostAuth0Function/QuerylistRVSpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistRVSpostAuth0FunctionQuerylistRVSpostAuth0FunctionAppSyncFunction6313CBB0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistRVSpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/QueryListRVSDataResolverFn/QueryListRVSDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListRVSDataResolverFnQueryListRVSDataResolverFnAppSyncFunction915AA90A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListRVSDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/queryListRVSResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listRVS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationcreateRVinit0Function/MutationcreateRVinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRVinit0FunctionMutationcreateRVinit0FunctionAppSyncFunction7BA8D05E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRVinit0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationcreateRVauth0Function/MutationcreateRVauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRVauth0FunctionMutationcreateRVauth0FunctionAppSyncFunctionDF0D0186"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRVauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationcreateRVpostAuth0Function/MutationcreateRVpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateRVpostAuth0FunctionMutationcreateRVpostAuth0FunctionAppSyncFunction1BF1D6EB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateRVpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationCreateRVDataResolverFn/MutationCreateRVDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateRVDataResolverFnMutationCreateRVDataResolverFnAppSyncFunction14E1455E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateRVDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/mutationCreateRVResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createRV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationupdateRVinit0Function/MutationupdateRVinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRVinit0FunctionMutationupdateRVinit0FunctionAppSyncFunction4014D917"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRVinit0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationupdateRVauth0Function/MutationupdateRVauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRVauth0FunctionMutationupdateRVauth0FunctionAppSyncFunctionB0BC5409"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRVauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationupdateRVpostAuth0Function/MutationupdateRVpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateRVpostAuth0FunctionMutationupdateRVpostAuth0FunctionAppSyncFunctionCF8FD014"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateRVpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationUpdateRVDataResolverFn/MutationUpdateRVDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateRVDataResolverFnMutationUpdateRVDataResolverFnAppSyncFunctionB2F9E932"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateRVDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/mutationUpdateRVResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateRV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationdeleteRVauth0Function/MutationdeleteRVauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRVauth0FunctionMutationdeleteRVauth0FunctionAppSyncFunction85969388"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRVauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationdeleteRVpostAuth0Function/MutationdeleteRVpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteRVpostAuth0FunctionMutationdeleteRVpostAuth0FunctionAppSyncFunction35DB6327"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteRVpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/MutationDeleteRVDataResolverFn/MutationDeleteRVDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteRVDataResolverFnMutationDeleteRVDataResolverFnAppSyncFunction21C16636"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteRVDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/mutationDeleteRVResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteRV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptiononCreateRVauth0Function/SubscriptiononCreateRVauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRVauth0FunctionSubscriptiononCreateRVauth0FunctionAppSyncFunction352354F9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRVauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptiononCreateRVpostAuth0Function/SubscriptiononCreateRVpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRVpostAuth0FunctionSubscriptiononCreateRVpostAuth0FunctionAppSyncFunctionF1444BA6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateRVpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptionOnCreateRVDataResolverFn/SubscriptionOnCreateRVDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateRVDataResolverFnSubscriptionOnCreateRVDataResolverFnAppSyncFunction01846660"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateRVDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/subscriptionOnCreateRVResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateRV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptiononUpdateRVauth0Function/SubscriptiononUpdateRVauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRVauth0FunctionSubscriptiononUpdateRVauth0FunctionAppSyncFunction41CEFF48"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRVauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptiononUpdateRVpostAuth0Function/SubscriptiononUpdateRVpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRVpostAuth0FunctionSubscriptiononUpdateRVpostAuth0FunctionAppSyncFunction11967DCE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateRVpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptionOnUpdateRVDataResolverFn/SubscriptionOnUpdateRVDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateRVDataResolverFnSubscriptionOnUpdateRVDataResolverFnAppSyncFunctionA707405D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateRVDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/subscriptionOnUpdateRVResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateRV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptiononDeleteRVauth0Function/SubscriptiononDeleteRVauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRVauth0FunctionSubscriptiononDeleteRVauth0FunctionAppSyncFunctionE4D34E64"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRVauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptiononDeleteRVpostAuth0Function/SubscriptiononDeleteRVpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRVpostAuth0FunctionSubscriptiononDeleteRVpostAuth0FunctionAppSyncFunctionABCDA9B9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteRVpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/SubscriptionOnDeleteRVDataResolverFn/SubscriptionOnDeleteRVDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteRVDataResolverFnSubscriptionOnDeleteRVDataResolverFnAppSyncFunction44E76CA0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteRVDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/subscriptionOnDeleteRVResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteRVResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteRV"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/RVOwnerDataResolverFn/RVOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RVOwnerDataResolverFnRVOwnerDataResolverFnAppSyncFunctionFE772DAB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RVOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/rVOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RVownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "RV.owner"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventEB2DDEF7Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustoF6F1C68D"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/RV.NestedStack/RV.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataRVNestedStackRVNestedStackResource1CEBFE1D"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/ShouldUseServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUseServerSideEncryption"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MaintenanceRecordTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MaintenanceRecordTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceRecordTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/CustomTableMaintenanceRecordTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/GetAttMaintenanceRecordTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttMaintenanceRecordTableStreamArn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/GetAttMaintenanceRecordTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttMaintenanceRecordTableName"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MaintenanceRecordIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecordIAMRole"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MaintenanceRecordIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceRecordIAMRole2D3432C4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecordIAMRole"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MaintenanceRecordDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecordTable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MaintenanceRecordDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceRecordDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecordTable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/QuerygetMaintenanceRecordauth0Function/QuerygetMaintenanceRecordauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetMaintenanceRecordauth0FunctionQuerygetMaintenanceRecordauth0FunctionAppSyncFunctionF015A7F1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetMaintenanceRecordauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/QuerygetMaintenanceRecordpostAuth0Function/QuerygetMaintenanceRecordpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetMaintenanceRecordpostAuth0FunctionQuerygetMaintenanceRecordpostAuth0FunctionAppSyncFunction6DD773C8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetMaintenanceRecordpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/QueryGetMaintenanceRecordDataResolverFn/QueryGetMaintenanceRecordDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetMaintenanceRecordDataResolverFnQueryGetMaintenanceRecordDataResolverFnAppSyncFunctionDE322817"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetMaintenanceRecordDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/queryGetMaintenanceRecordResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getMaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/QuerylistMaintenanceRecordsauth0Function/QuerylistMaintenanceRecordsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistMaintenanceRecordsauth0FunctionQuerylistMaintenanceRecordsauth0FunctionAppSyncFunction4C1EAAA7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistMaintenanceRecordsauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/QuerylistMaintenanceRecordspostAuth0Function/QuerylistMaintenanceRecordspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistMaintenanceRecordspostAuth0FunctionQuerylistMaintenanceRecordspostAuth0FunctionAppSyncFunction8EFB425B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistMaintenanceRecordspostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/QueryListMaintenanceRecordsDataResolverFn/QueryListMaintenanceRecordsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListMaintenanceRecordsDataResolverFnQueryListMaintenanceRecordsDataResolverFnAppSyncFunction7D26391E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListMaintenanceRecordsDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/queryListMaintenanceRecordsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listMaintenanceRecords"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationcreateMaintenanceRecordinit0Function/MutationcreateMaintenanceRecordinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMaintenanceRecordinit0FunctionMutationcreateMaintenanceRecordinit0FunctionAppSyncFunctionF74665A2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMaintenanceRecordinit0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationcreateMaintenanceRecordauth0Function/MutationcreateMaintenanceRecordauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMaintenanceRecordauth0FunctionMutationcreateMaintenanceRecordauth0FunctionAppSyncFunction3EE94D16"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMaintenanceRecordauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationcreateMaintenanceRecordpostAuth0Function/MutationcreateMaintenanceRecordpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMaintenanceRecordpostAuth0FunctionMutationcreateMaintenanceRecordpostAuth0FunctionAppSyncFunction362A7DFD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMaintenanceRecordpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationCreateMaintenanceRecordDataResolverFn/MutationCreateMaintenanceRecordDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateMaintenanceRecordDataResolverFnMutationCreateMaintenanceRecordDataResolverFnAppSyncFunctionB57EA43D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateMaintenanceRecordDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/mutationCreateMaintenanceRecordResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createMaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationupdateMaintenanceRecordinit0Function/MutationupdateMaintenanceRecordinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMaintenanceRecordinit0FunctionMutationupdateMaintenanceRecordinit0FunctionAppSyncFunction47076436"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMaintenanceRecordinit0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationupdateMaintenanceRecordauth0Function/MutationupdateMaintenanceRecordauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMaintenanceRecordauth0FunctionMutationupdateMaintenanceRecordauth0FunctionAppSyncFunction8560D1ED"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMaintenanceRecordauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationupdateMaintenanceRecordpostAuth0Function/MutationupdateMaintenanceRecordpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMaintenanceRecordpostAuth0FunctionMutationupdateMaintenanceRecordpostAuth0FunctionAppSyncFunction91B6918C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMaintenanceRecordpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationUpdateMaintenanceRecordDataResolverFn/MutationUpdateMaintenanceRecordDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateMaintenanceRecordDataResolverFnMutationUpdateMaintenanceRecordDataResolverFnAppSyncFunction7BC39072"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateMaintenanceRecordDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/mutationUpdateMaintenanceRecordResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateMaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationdeleteMaintenanceRecordauth0Function/MutationdeleteMaintenanceRecordauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteMaintenanceRecordauth0FunctionMutationdeleteMaintenanceRecordauth0FunctionAppSyncFunction9DE07BAA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteMaintenanceRecordauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationdeleteMaintenanceRecordpostAuth0Function/MutationdeleteMaintenanceRecordpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteMaintenanceRecordpostAuth0FunctionMutationdeleteMaintenanceRecordpostAuth0FunctionAppSyncFunctionCAAC7A53"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteMaintenanceRecordpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MutationDeleteMaintenanceRecordDataResolverFn/MutationDeleteMaintenanceRecordDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteMaintenanceRecordDataResolverFnMutationDeleteMaintenanceRecordDataResolverFnAppSyncFunction93C89646"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteMaintenanceRecordDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/mutationDeleteMaintenanceRecordResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteMaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptiononCreateMaintenanceRecordauth0Function/SubscriptiononCreateMaintenanceRecordauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMaintenanceRecordauth0FunctionSubscriptiononCreateMaintenanceRecordauth0FunctionAppSyncFunctionA9E786FF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateMaintenanceRecordauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptiononCreateMaintenanceRecordpostAuth0Function/SubscriptiononCreateMaintenanceRecordpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMaintenanceRecordpostAuth0FunctionSubscriptiononCreateMaintenanceRecordpostAuth0FunctionAppSyncFunctionE1296C2F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateMaintenanceRecordpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptionOnCreateMaintenanceRecordDataResolverFn/SubscriptionOnCreateMaintenanceRecordDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateMaintenanceRecordDataResolverFnSubscriptionOnCreateMaintenanceRecordDataResolverFnAppSyncFunctionCC0D3238"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateMaintenanceRecordDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/subscriptionOnCreateMaintenanceRecordResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateMaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptiononUpdateMaintenanceRecordauth0Function/SubscriptiononUpdateMaintenanceRecordauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMaintenanceRecordauth0FunctionSubscriptiononUpdateMaintenanceRecordauth0FunctionAppSyncFunction1C19FA89"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateMaintenanceRecordauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptiononUpdateMaintenanceRecordpostAuth0Function/SubscriptiononUpdateMaintenanceRecordpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMaintenanceRecordpostAuth0FunctionSubscriptiononUpdateMaintenanceRecordpostAuth0FunctionAppSyncFunction156B5A40"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateMaintenanceRecordpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptionOnUpdateMaintenanceRecordDataResolverFn/SubscriptionOnUpdateMaintenanceRecordDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateMaintenanceRecordDataResolverFnSubscriptionOnUpdateMaintenanceRecordDataResolverFnAppSyncFunctionD9A15CAC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateMaintenanceRecordDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/subscriptionOnUpdateMaintenanceRecordResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateMaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptiononDeleteMaintenanceRecordauth0Function/SubscriptiononDeleteMaintenanceRecordauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMaintenanceRecordauth0FunctionSubscriptiononDeleteMaintenanceRecordauth0FunctionAppSyncFunctionCC49FC11"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteMaintenanceRecordauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptiononDeleteMaintenanceRecordpostAuth0Function/SubscriptiononDeleteMaintenanceRecordpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMaintenanceRecordpostAuth0FunctionSubscriptiononDeleteMaintenanceRecordpostAuth0FunctionAppSyncFunction65C835E1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteMaintenanceRecordpostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/SubscriptionOnDeleteMaintenanceRecordDataResolverFn/SubscriptionOnDeleteMaintenanceRecordDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteMaintenanceRecordDataResolverFnSubscriptionOnDeleteMaintenanceRecordDataResolverFnAppSyncFunction72B10EBC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteMaintenanceRecordDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/subscriptionOnDeleteMaintenanceRecordResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMaintenanceRecordResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteMaintenanceRecord"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/MaintenanceRecordOwnerDataResolverFn/MaintenanceRecordOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceRecordOwnerDataResolverFnMaintenanceRecordOwnerDataResolverFnAppSyncFunctionDAD71BCA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecordOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/maintenanceRecordOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceRecordownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceRecord.owner"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventEB2DDEF7Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustoF6F1C68D"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceRecord.NestedStack/MaintenanceRecord.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataMaintenanceRecordNestedStackMaintenanceRecordNestedStackResource75A3FAAD"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/ShouldUseServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUseServerSideEncryption"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceScheduleTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/CustomTableMaintenanceScheduleTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/GetAttMaintenanceScheduleTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttMaintenanceScheduleTableStreamArn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/GetAttMaintenanceScheduleTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttMaintenanceScheduleTableName"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceScheduleIAMRole"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceScheduleIAMRole4B486FC5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceScheduleIAMRole"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceScheduleTable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceScheduleDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceScheduleTable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerygetMaintenanceScheduleauth0Function/QuerygetMaintenanceScheduleauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetMaintenanceScheduleauth0FunctionQuerygetMaintenanceScheduleauth0FunctionAppSyncFunction486B5F3B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetMaintenanceScheduleauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerygetMaintenanceSchedulepostAuth0Function/QuerygetMaintenanceSchedulepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetMaintenanceSchedulepostAuth0FunctionQuerygetMaintenanceSchedulepostAuth0FunctionAppSyncFunction6CD7199A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetMaintenanceSchedulepostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QueryGetMaintenanceScheduleDataResolverFn/QueryGetMaintenanceScheduleDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetMaintenanceScheduleDataResolverFnQueryGetMaintenanceScheduleDataResolverFnAppSyncFunctionA7D12B99"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetMaintenanceScheduleDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/queryGetMaintenanceScheduleResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getMaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerylistMaintenanceSchedulesauth0Function/QuerylistMaintenanceSchedulesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistMaintenanceSchedulesauth0FunctionQuerylistMaintenanceSchedulesauth0FunctionAppSyncFunction92356C0C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistMaintenanceSchedulesauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QuerylistMaintenanceSchedulespostAuth0Function/QuerylistMaintenanceSchedulespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistMaintenanceSchedulespostAuth0FunctionQuerylistMaintenanceSchedulespostAuth0FunctionAppSyncFunction08A52320"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistMaintenanceSchedulespostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/QueryListMaintenanceSchedulesDataResolverFn/QueryListMaintenanceSchedulesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListMaintenanceSchedulesDataResolverFnQueryListMaintenanceSchedulesDataResolverFnAppSyncFunction72058E65"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListMaintenanceSchedulesDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/queryListMaintenanceSchedulesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listMaintenanceSchedules"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationcreateMaintenanceScheduleinit0Function/MutationcreateMaintenanceScheduleinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMaintenanceScheduleinit0FunctionMutationcreateMaintenanceScheduleinit0FunctionAppSyncFunction980A6ECE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMaintenanceScheduleinit0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationcreateMaintenanceScheduleauth0Function/MutationcreateMaintenanceScheduleauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMaintenanceScheduleauth0FunctionMutationcreateMaintenanceScheduleauth0FunctionAppSyncFunction842A329E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMaintenanceScheduleauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationcreateMaintenanceSchedulepostAuth0Function/MutationcreateMaintenanceSchedulepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMaintenanceSchedulepostAuth0FunctionMutationcreateMaintenanceSchedulepostAuth0FunctionAppSyncFunctionE886EC28"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMaintenanceSchedulepostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationCreateMaintenanceScheduleDataResolverFn/MutationCreateMaintenanceScheduleDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateMaintenanceScheduleDataResolverFnMutationCreateMaintenanceScheduleDataResolverFnAppSyncFunctionE0BAC5A4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateMaintenanceScheduleDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/mutationCreateMaintenanceScheduleResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createMaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationupdateMaintenanceScheduleinit0Function/MutationupdateMaintenanceScheduleinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMaintenanceScheduleinit0FunctionMutationupdateMaintenanceScheduleinit0FunctionAppSyncFunction6E074660"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMaintenanceScheduleinit0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationupdateMaintenanceScheduleauth0Function/MutationupdateMaintenanceScheduleauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMaintenanceScheduleauth0FunctionMutationupdateMaintenanceScheduleauth0FunctionAppSyncFunction052AE0DB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMaintenanceScheduleauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationupdateMaintenanceSchedulepostAuth0Function/MutationupdateMaintenanceSchedulepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMaintenanceSchedulepostAuth0FunctionMutationupdateMaintenanceSchedulepostAuth0FunctionAppSyncFunction6305D9E1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMaintenanceSchedulepostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationUpdateMaintenanceScheduleDataResolverFn/MutationUpdateMaintenanceScheduleDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateMaintenanceScheduleDataResolverFnMutationUpdateMaintenanceScheduleDataResolverFnAppSyncFunction83893AA3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateMaintenanceScheduleDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/mutationUpdateMaintenanceScheduleResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateMaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationdeleteMaintenanceScheduleauth0Function/MutationdeleteMaintenanceScheduleauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteMaintenanceScheduleauth0FunctionMutationdeleteMaintenanceScheduleauth0FunctionAppSyncFunction5D78559E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteMaintenanceScheduleauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationdeleteMaintenanceSchedulepostAuth0Function/MutationdeleteMaintenanceSchedulepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteMaintenanceSchedulepostAuth0FunctionMutationdeleteMaintenanceSchedulepostAuth0FunctionAppSyncFunction6921425B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteMaintenanceSchedulepostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MutationDeleteMaintenanceScheduleDataResolverFn/MutationDeleteMaintenanceScheduleDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteMaintenanceScheduleDataResolverFnMutationDeleteMaintenanceScheduleDataResolverFnAppSyncFunctionBB1EB57C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteMaintenanceScheduleDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/mutationDeleteMaintenanceScheduleResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteMaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononCreateMaintenanceScheduleauth0Function/SubscriptiononCreateMaintenanceScheduleauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMaintenanceScheduleauth0FunctionSubscriptiononCreateMaintenanceScheduleauth0FunctionAppSyncFunction64B2BD53"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateMaintenanceScheduleauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononCreateMaintenanceSchedulepostAuth0Function/SubscriptiononCreateMaintenanceSchedulepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMaintenanceSchedulepostAuth0FunctionSubscriptiononCreateMaintenanceSchedulepostAuth0FunctionAppSyncFunction59184087"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateMaintenanceSchedulepostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptionOnCreateMaintenanceScheduleDataResolverFn/SubscriptionOnCreateMaintenanceScheduleDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateMaintenanceScheduleDataResolverFnSubscriptionOnCreateMaintenanceScheduleDataResolverFnAppSyncFunction0EDF2757"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateMaintenanceScheduleDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/subscriptionOnCreateMaintenanceScheduleResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateMaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononUpdateMaintenanceScheduleauth0Function/SubscriptiononUpdateMaintenanceScheduleauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMaintenanceScheduleauth0FunctionSubscriptiononUpdateMaintenanceScheduleauth0FunctionAppSyncFunctionA95061E5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateMaintenanceScheduleauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononUpdateMaintenanceSchedulepostAuth0Function/SubscriptiononUpdateMaintenanceSchedulepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMaintenanceSchedulepostAuth0FunctionSubscriptiononUpdateMaintenanceSchedulepostAuth0FunctionAppSyncFunctionF6121095"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateMaintenanceSchedulepostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptionOnUpdateMaintenanceScheduleDataResolverFn/SubscriptionOnUpdateMaintenanceScheduleDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateMaintenanceScheduleDataResolverFnSubscriptionOnUpdateMaintenanceScheduleDataResolverFnAppSyncFunction99875810"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateMaintenanceScheduleDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/subscriptionOnUpdateMaintenanceScheduleResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateMaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononDeleteMaintenanceScheduleauth0Function/SubscriptiononDeleteMaintenanceScheduleauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMaintenanceScheduleauth0FunctionSubscriptiononDeleteMaintenanceScheduleauth0FunctionAppSyncFunctionE530E0CA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteMaintenanceScheduleauth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptiononDeleteMaintenanceSchedulepostAuth0Function/SubscriptiononDeleteMaintenanceSchedulepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMaintenanceSchedulepostAuth0FunctionSubscriptiononDeleteMaintenanceSchedulepostAuth0FunctionAppSyncFunctionAE278DE0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteMaintenanceSchedulepostAuth0Function"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/SubscriptionOnDeleteMaintenanceScheduleDataResolverFn/SubscriptionOnDeleteMaintenanceScheduleDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteMaintenanceScheduleDataResolverFnSubscriptionOnDeleteMaintenanceScheduleDataResolverFnAppSyncFunctionDB4C86DF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteMaintenanceScheduleDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/subscriptionOnDeleteMaintenanceScheduleResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMaintenanceScheduleResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteMaintenanceSchedule"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/MaintenanceScheduleOwnerDataResolverFn/MaintenanceScheduleOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceScheduleOwnerDataResolverFnMaintenanceScheduleOwnerDataResolverFnAppSyncFunction3FE5649B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceScheduleOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/maintenanceScheduleOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MaintenanceScheduleownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MaintenanceSchedule.owner"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventEB2DDEF7Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource152DED4BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyTableManagerTableManagerCustoF6F1C68D"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPINONEDS9F86B26EName"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/MaintenanceSchedule.NestedStack/MaintenanceSchedule.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataMaintenanceScheduleNestedStackMaintenanceScheduleNestedStackResource707DA5E8"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucket9CCB4ACA"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicyF1C1C548"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketAutoDeleteObjectsCustomResource437F26F5"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayerE322F905"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB21775929"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/modelIntrospectionSchemaBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketF566B665"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/modelIntrospectionSchemaBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketPolicy4DAB0D15"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/modelIntrospectionSchemaBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketAutoDeleteObjectsCustomResourceFE57309F"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/modelIntrospectionSchemaBucketDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentAwsCliLayer13C432F7"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/modelIntrospectionSchemaBucketDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentCustomResource1536MiB104B97EC"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/AMPLIFY_DATA_GRAPHQL_ENDPOINTParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAGRAPHQLENDPOINTParameter1C2CBB16"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_BUCKET_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMABUCKETNAMEParameter47BF4F44"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_KEYParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMAKEYParameterB6AEAE8A"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/AMPLIFY_DATA_DEFAULT_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATADEFAULTNAMEParameterE7C23CC4"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthUserPool03F917D5Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthUserPool03F917D5Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthauthenticatedUserRole1617BE6ERef"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthunauthenticatedUserRole8BE9BB42Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/reference-to-amplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputs.amplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyfairwindsv2willisandboxd7cc78b1ffauthNestedStackauthNestedStackResource93D61C1BOutputsamplifyfairwindsv2willisandboxd7cc78b1ffauthamplifyAuthIdentityPool15D32379Ref"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790ApiId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790GraphQLUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataGraphQLAPI58987790GraphQLUrl"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data/amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiBC30A1E1EDestinationBucketArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyfairwindsv2willisandboxd7cc78b1ffdataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiBC30A1E1EDestinationBucketArn"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/data.NestedStack/data.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "data7552DF31"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/awsAppsyncApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiId"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/awsAppsyncApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiEndpoint"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/awsAppsyncAuthenticationType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAuthenticationType"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/awsAppsyncRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncRegion"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/amplifyApiModelSchemaS3Uri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyApiModelSchemaS3Uri"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/awsAppsyncAdditionalAuthenticationTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAdditionalAuthenticationTypes"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/amplify-fairwindsv2-willi-sandbox-d7cc78b1ff/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "amplify-fairwindsv2-willi-sandbox-d7cc78b1ff"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

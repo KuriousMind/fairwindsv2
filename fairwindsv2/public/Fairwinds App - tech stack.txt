@@ -40,8 +40,11 @@
   - Free tier: 250,000 queries
   - Real-time capabilities
   - Offline sync
+  - Authorization Mode: User Pool
+  - Data Schema: Owner-based authorization
 
 - **Hosting**: Amplify Hosting
+  - App ID: d1lpqv07dp6cpg
   - ~$5-10/month
   - Global CDN
   - SSL certificates

@@ -19,6 +19,9 @@
   "devDependencies": {
     "@aws-amplify/backend": "^1.14.0",
     "@aws-amplify/backend-cli": "^1.4.8",
+    "@aws-amplify/backend-data": "^1.4.0",
+    "@aws-amplify/data-construct": "^1.14.6",
+    "@aws-cdk/aws-dynamodb": "^1.203.0",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import rvMakesData from '../../public/rv-makes.json'
 import { useRouter } from 'next/navigation'
@@ -16,7 +16,7 @@ type RVFormData = {
   notes?: string
 }
 
-export default function RVProfileForm() {
+export default function RVProfileForm(): React.ReactElement {
   const router = useRouter()
   const { user } = useAuthenticator()
   const client = generateClient<Schema>()
@@ -25,8 +25,20 @@ export default function RVProfileForm() {
     register,
     handleSubmit,
     setError,
+    setValue,
+    watch,
     formState: { errors, isSubmitting }
-  } = useForm<RVFormData>()
+  } = useForm<RVFormData>({
+    defaultValues: {
+      make: '',
+      model: '',
+      year: new Date().getFullYear(),
+      vin: '',
+      notes: ''
+    }
+  })
+
+  const makeValue = watch('make')
 
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [suggestions, setSuggestions] = useState<string[]>([])
@@ -35,10 +47,26 @@ export default function RVProfileForm() {
   const onSubmit = async (data: RVFormData) => {
     try {
       setSubmitError(null)
-      await client.models.RV.create({
-        ...data,
-        ownerEmail: user?.username || '',
-      })
+      if (!user?.signInDetails?.loginId) {
+        setSubmitError('User email not found. Please sign in again.')
+        return
+      }
+      // Find the exact make from the list to ensure correct casing
+      const exactMake = rvMakesData.makes.find(
+        make => make.toLowerCase() === data.make.toLowerCase()
+      )
+      
+      const rvData = {
+        make: exactMake || data.make,
+        model: data.model,
+        year: Number(data.year), // Ensure year is a number
+        vin: data.vin || null, // Use null instead of undefined
+        notes: data.notes || null, // Use null instead of undefined
+        ownerEmail: user.signInDetails.loginId
+      }
+      console.log('Submitting RV data:', rvData)
+      const result = await client.models.RV.create(rvData)
+      console.log('RV creation result:', result)
       router.push('/dashboard')
     } catch (error) {
       console.error('Error creating RV profile:', error)
@@ -56,24 +84,35 @@ export default function RVProfileForm() {
           <input
             type="text"
             id="make"
-            {...register('make', { required: 'Make is required' })}
+            {...register('make', { 
+              required: 'Make is required',
+              validate: value => {
+                if (!value.trim()) return 'Make is required';
+                const isValidMake = rvMakesData.makes.some(
+                  make => make.toLowerCase() === value.toLowerCase()
+                );
+                return isValidMake || 'Please select a valid RV make from the suggestions';
+              }
+            })}
             onChange={(e) => {
               const value = e.target.value;
-              const filtered = rvMakesData.makes.filter((make: string) => 
-                make.toLowerCase().includes(value.toLowerCase())
-              );
+              setValue('make', value, { shouldValidate: true });
+              const filtered = value
+                ? rvMakesData.makes.filter((make: string) => 
+                    make.toLowerCase().includes(value.toLowerCase())
+                  )
+                : [];
               setSuggestions(filtered);
-              setShowSuggestions(value.length > 0);
+              setShowSuggestions(true);
             }}
             onFocus={() => {
-              const value = (document.getElementById('make') as HTMLInputElement).value;
-              if (value) {
-                const filtered = rvMakesData.makes.filter((make: string) => 
-                  make.toLowerCase().includes(value.toLowerCase())
-                );
-                setSuggestions(filtered);
-                setShowSuggestions(true);
-              }
+              const filtered = makeValue 
+                ? rvMakesData.makes.filter((make: string) => 
+                    make.toLowerCase().includes(makeValue.toLowerCase())
+                  )
+                : rvMakesData.makes;
+              setSuggestions(filtered);
+              setShowSuggestions(true);
             }}
             onBlur={() => {
               // Delay hiding suggestions to allow for click handling
@@ -88,8 +127,7 @@ export default function RVProfileForm() {
                   key={index}
                   className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
                   onClick={() => {
-                    const makeInput = document.getElementById('make') as HTMLInputElement;
-                    makeInput.value = make;
+                    setValue('make', make, { shouldValidate: true });
                     setSuggestions([]);
                     setShowSuggestions(false);
                   }}

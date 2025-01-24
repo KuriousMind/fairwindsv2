@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import rvMakesData from '../../public/rv-makes.json'
 import { useRouter } from 'next/navigation'
 import { generateClient } from 'aws-amplify/data'
 import { type Schema } from '@/amplify/data/resource'
@@ -28,6 +29,8 @@ export default function RVProfileForm() {
   } = useForm<RVFormData>()
 
   const [submitError, setSubmitError] = useState<string | null>(null)
+  const [suggestions, setSuggestions] = useState<string[]>([])
+  const [showSuggestions, setShowSuggestions] = useState(false)
 
   const onSubmit = async (data: RVFormData) => {
     try {
@@ -49,12 +52,54 @@ export default function RVProfileForm() {
         <label htmlFor="make" className="block text-sm font-medium text-gray-700">
           Make
         </label>
-        <input
-          type="text"
-          id="make"
-          {...register('make', { required: 'Make is required' })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-        />
+        <div className="relative">
+          <input
+            type="text"
+            id="make"
+            {...register('make', { required: 'Make is required' })}
+            onChange={(e) => {
+              const value = e.target.value;
+              const filtered = rvMakesData.makes.filter((make: string) => 
+                make.toLowerCase().includes(value.toLowerCase())
+              );
+              setSuggestions(filtered);
+              setShowSuggestions(value.length > 0);
+            }}
+            onFocus={() => {
+              const value = (document.getElementById('make') as HTMLInputElement).value;
+              if (value) {
+                const filtered = rvMakesData.makes.filter((make: string) => 
+                  make.toLowerCase().includes(value.toLowerCase())
+                );
+                setSuggestions(filtered);
+                setShowSuggestions(true);
+              }
+            }}
+            onBlur={() => {
+              // Delay hiding suggestions to allow for click handling
+              setTimeout(() => setShowSuggestions(false), 200);
+            }}
+            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          />
+          {showSuggestions && suggestions.length > 0 && (
+            <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-auto shadow-lg">
+              {suggestions.map((make, index) => (
+                <li
+                  key={index}
+                  className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => {
+                    const makeInput = document.getElementById('make') as HTMLInputElement;
+                    makeInput.value = make;
+                    setSuggestions([]);
+                    setShowSuggestions(false);
+                  }}
+                >
+                  {make}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         {errors.make && (
           <p className="mt-1 text-sm text-red-600">{errors.make.message}</p>
         )}

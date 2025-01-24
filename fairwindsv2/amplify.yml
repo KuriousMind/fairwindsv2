@@ -3,9 +3,17 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        # Verify and setup Node environment
+        - which node
+        - which npm
+        - node -v
+        - npm -v
+        # Install dependencies
+        - npm ci --legacy-peer-deps
+        - npm install -g next
     build:
       commands:
+        - echo "Building with Node $(node -v)"
         - npm run build
   artifacts:
     baseDirectory: .next

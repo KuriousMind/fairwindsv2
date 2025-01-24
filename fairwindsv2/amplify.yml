@@ -9,7 +9,7 @@ frontend:
         - node -v
         - npm -v
         # Install dependencies
-        - npm ci --legacy-peer-deps
+        - npm install --legacy-peer-deps
         - npm install -g next
     build:
       commands:

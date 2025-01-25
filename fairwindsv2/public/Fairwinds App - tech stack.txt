@@ -1,92 +1,110 @@
-# Fairwinds RV Maintenance App - Technical Implementation Plan
+# Fairwinds RV Maintenance App - Technical Stack
 
-## Core Technology Stack
+## Technology Stack
 
-### Frontend (Free)
-- **Framework**: Next.js 14
-  - Built-in PWA capabilities
-  - Server-side rendering
-  - Image optimization with next/image
-  - File-system based routing
+### Frontend
+- Next.js 14 (PWA-capable, SSR, file-system routing)
+- React Built-in State Management (useState, useContext)
+- React Hook Form
+- TailwindCSS
+- IndexedDB & Service Workers (offline capability)
+- Canvas API for client-side image processing
 
-- **State & Data Management**
-  - Zustand for state management (lightweight, offline-capable)
-  - React Hook Form for form handling
-  - IndexedDB for offline storage
-  - Service Workers for offline functionality
+## Technical Specifications
 
-- **UI & Styling**
-  - TailwindCSS
-  - Native HTML5 components (mobile-friendly)
-  - System-native file pickers and camera API
+### Photo Management
+- Client-side compression using Canvas API:
+  * Auto-resize to max 1920px dimension (maintaining aspect ratio)
+  * JPEG compression (quality: 0.8)
+  * Native browser APIs only, no additional dependencies
+- Storage optimization:
+  * Maximum 12 photos per RV
+  * Compressed photos stored in S3
+  * Thumbnails cached in IndexedDB for offline viewing
 
-### Backend (AWS Free Tier)
-- **Authentication**: Amazon Cognito
-  - Free tier: 50,000 MAU
-  - Email/password auth
-  - Session management
+### Offline Capabilities
+- IndexedDB storage quota: 50MB
+  * Maintenance events data (~1MB)
+  * Thumbnail versions of latest photos (~3MB)
+  * Remaining space for future features
+- Offline viewing only:
+  * Upcoming maintenance events
+  * Basic RV information
+  * Cached thumbnails
+- No offline editing in Phase 1
 
-- **Database**: DynamoDB
-  - Free tier: 25GB storage
-  - NoSQL flexibility
-  - Offline sync support
+### Authentication Implementation
+- Phase 1 (Basic):
+  * Email/password authentication only
+  * No password complexity requirements
+  * 24-hour session duration
+  * Basic JWT token handling
 
-- **Storage**: S3
-  - Free tier: 5GB
-  - Photo storage
-  - Document storage
-
-- **API**: AppSync with GraphQL
-  - Free tier: 250,000 queries
-  - Real-time capabilities
-  - Offline sync
-  - Authorization Mode: User Pool
-  - Data Schema: Owner-based authorization
-
-- **Hosting**: Amplify Hosting
-  - App ID: d1lpqv07dp6cpg
-  - ~$5-10/month
-  - Global CDN
-  - SSL certificates
+### Backend (AWS)
+- Cognito: Authentication (50k MAU free tier)
+- DynamoDB: Database (25GB free tier)
+- S3: Storage (5GB free tier)
+- AppSync: GraphQL API (250k queries free tier)
+- Amplify Hosting: Deployment & CDN (~$5-10/month)
 
 ## Implementation Phases
 
-### Phase 1: Personal Tool (Weeks 1-3)
-1. RV Profile Management
-   - Single RV profile
-   - Basic info storage
-   - Photo upload capability
-   - Offline access
+### Authentication Strategy
+- Cognito User Pools for authentication management
+- JWT token handling with secure storage
+- Session management with auto-refresh
+- Initial session timeout: 24 hours
 
-2. Basic Maintenance Tracking
-   - Maintenance records
-   - Photo attachments
-   - Service history
-   - Basic reminders
+### State Management Strategy
+- Component-level state with useState
+- Application-wide state with useContext
+- Authentication state via Amplify Auth
+- Offline state sync with IndexedDB
+- Form state handled by React Hook Form
 
-### Phase 2: Enhanced Features (Weeks 4-6)
-1. Document Management
-   - Manual storage
-   - Maintenance docs
-   - Receipt tracking
-   - Offline access
+### Phase 1: Core RV Profile & Auth
+- RV profile creation and management
+  * Single RV per user account
+  * Auto-complete make/model selection
+  * Required/optional field validation
+- Basic maintenance record tracking
+- Photo upload and storage
+  * 12 photo limit per RV
+  * Client-side compression
+  * Thumbnail generation
+- Offline access implementation
+  * View-only access to maintenance events
+  * 50MB IndexedDB quota
+- Email-based authentication
+  * Sign up with email verification
+  * Login with email/password
+  * Password reset flow
+  * Basic session management (24h duration)
 
-2. Maintenance Planning
-   - Scheduled maintenance
-   - Custom intervals
-   - Basic notifications
-   - Export capability
+### Phase 2: Enhanced Features
+- Document management system
+- Maintenance scheduling
+- Custom maintenance intervals
+- Data export capabilities
+- Enhanced authentication
+  * Phone number authentication
+  * SMS verification codes
+  * Multiple auth method support
+  * Improved session handling
 
-### Phase 3: Sharing & Community (Weeks 7-9)
-1. Multi-User Support
-   - Basic profiles
-   - Maintenance tips sharing
-   - Community features
-
-2. Parts & Services
-   - Amazon affiliate links
-   - Basic parts lookup
-   - Service manual links
+### Phase 3: Community Features
+- Maintenance tips sharing
+- Parts lookup with Amazon affiliate integration
+- Service manual repository
+- Advanced security features
+  * Enhanced password policies
+    - Minimum 12 characters
+    - Special character requirements
+    - Password history enforcement
+  * Secure credential storage
+  * MFA implementation
+  * Biometric authentication option
+  * Advanced session controls
 
 ## Data Models
 
@@ -126,78 +144,87 @@ type Document @model {
 }
 ```
 
-## Development Setup
+## Development Guidelines
+
+### Setup
 ```bash
-# Project setup
 npm create next-app@latest fairwinds --typescript --tailwind --app
-cd fairwinds
-
-# Add dependencies
-npm install @aws-amplify/ui-react aws-amplify zustand react-hook-form
-
-# Initialize Amplify
-amplify init
-amplify add auth
-amplify add api
-amplify add storage
+npm install @aws-amplify/ui-react aws-amplify react-hook-form
+amplify init && amplify add auth && amplify add api && amplify add storage
 ```
 
-## Mobile-First Development Guidelines
+### Mobile-First Implementation
+- PWA configuration with offline sync
+- Card-based navigation layout
+  * NavBar component for consistent button layout
+  * NavButton component for standardized interactions
+  * Maximum three buttons per card
+  * Back navigation integrated in NavBar
+- Full-screen forms for data entry
+- Grid/list layouts for galleries and records
+- Efficient battery usage and data sync
 
-1. PWA Requirements
-   - Manifest.json configuration
-   - Service worker setup
-   - Offline data sync
-   - Touch-friendly UI
+### Development & Deployment Strategy
+- Environment Variables:
+  * Managed automatically through AWS Amplify Console
+  * Required variables:
+    - Cognito User Pool settings
+    - S3 bucket configuration
+    - AppSync API endpoint
+    - DynamoDB table names
+- Deployment:
+  * Automatic deployments with git push
+  * Built-in SSL certificate management
+  * CDN distribution through Amplify
+  * Branch-based deployments available
+- Error Handling:
+  * Automatic error handling through AppSync
+  * Built-in error types:
+    - Unauthorized
+    - ValidationError
+    - ConditionalCheckFailedException
+  * Handled by Amplify client libraries
+- Testing Strategy (Phase 1):
+  * Manual testing approach
+  * Focus areas:
+    - Auth flows
+    - RV profile creation
+    - Photo upload (12 photo limit)
+    - Basic maintenance tracking
+  * Automated testing framework deferred to Phase 3
 
-2. Performance Targets
-   - Initial load < 3s on 4G
-   - Offline functionality for core features
-   - Minimal battery usage
-   - Efficient data sync
+### UI Theme Colors
+- Primary: #2B6CB0 (Blue) - primary actions, navigation
+- Accent: #E76F51 (Orange) - emphasis, CTAs
+- Secondary: #2A9D8F (Teal) - success states
+- Warning: #FFB938 (Yellow) - icons, accents
+- Text: #1D3557 (Navy) - body text
+- Heading: #8B4513 (Brown) - headers
+- Background: #F5E6D3 (Warm background)
+- White: #FFFFFF
 
-3. Storage Strategy
-   - IndexedDB for offline data
-   - S3 for cloud storage
-   - Efficient sync mechanism
-   - Storage quota management
+### Testing & Deployment
+- Unit testing: Jest + React Testing Library
+- Mobile and offline capability testing
+- Deployment via AWS Amplify
+- PWA validation and mobile testing
 
-## Testing Strategy
-- Basic Jest unit tests
-- React Testing Library
-- Mobile browser testing
-- Offline capability testing
+## Infrastructure & Costs
 
-## Deployment Process
-1. Development testing
-2. AWS Amplify deployment
-3. PWA validation
-4. Mobile testing
-
-## Cost Management
-- Monitor AWS usage
-- Stay within free tiers
-- Optimize storage usage
-- Efficient data queries
-
-## Future Considerations
-- Multiple RV support
-- Enhanced offline capabilities
-- Community features
-- Marketplace integration
-
-## Monthly Cost Estimate
+### Monthly Estimates
 - Amplify Hosting: ~$5-10
-- DynamoDB: Free tier
-- S3: ~$1-2
-- AppSync: Free tier
-- Cognito: Free tier
+- Storage (S3): ~$1-2
+- DynamoDB, AppSync, Cognito: Free tier
 Total: ~$15/month
 
-## Notes
-- Focus on personal utility first
-- Gradual feature expansion
-- Cost-conscious development
-- Mobile-first approach
+### Cost Management
+- Monitor AWS usage dashboards
+- Implement storage quotas
+- Optimize data queries and sync
 
-Last Updated: January 23, 2025
+## Future Roadmap
+- Enhanced offline capabilities
+- Community marketplace
+- Service provider integration
+
+Last Updated: January 25, 2025
